@@ -1,0 +1,121 @@
+*{
+    margin:0;
+    border:0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+.main{
+    position: absolute;
+    top:0;
+    left:0;
+    background-color:rgba(0,0,0,0.5);
+   
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+body{
+    background-color: rgb(221, 221, 221);
+}
+nav{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 9.5vh;
+    width:100%;
+    background-color: #128fdcd7;
+    font-family: 'Rubik', sans-serif;
+    z-index: -1;
+}
+.logo{
+    font-family: 'Cedarville Cursive', cursive;
+    font-size: 200%;
+}
+.nav-links{
+    display:flex;
+    justify-content: space-around;
+    width:35%;
+    
+}
+.nav-links a{
+    text-decoration:none;
+    color: black;
+    font-size: 15px;
+    border-color: black;
+    border-style: solid;
+    padding: 5px;
+}
+.nav-links li{
+    list-style: none;
+}
+
+.post{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.post-control{
+
+    width:40vw;
+    border:solid 1px rgb(168, 167, 167);
+    margin: 2.5vh;
+    
+    
+}
+.post-head{
+    display:flex;
+    align-items: center;
+}
+.post-like, .post-user{
+    width: 7%;
+}
+h1{
+    display: inline;
+    font-size: 100%;
+}
+.post-photo{
+    width:100%;
+    overflow:hidden;
+}
+.post-content, .post-head {
+    padding:10px;
+}
+.post-user{
+    display: inline-block;
+    border: solid 1px black;
+    border-radius: 50%;
+    width : 5%;
+    margin:5px;
+
+}
+
+@media only screen and (max-width: 550px){
+    .post-control{
+        width:300px;
+    }
+    nav{
+        justify-content: space-evenly;
+    }
+    .nav-links{
+        
+        justify-content: space-evenly;
+        width:30%;
+    }
+    .logo{
+        display:block;
+        font-size: 100%;
+    }
+    .nav-links a{
+        font-size: 12.5px;
+    }
+}
+
+    
+

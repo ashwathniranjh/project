@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href = "https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Rubik&family=Ubuntu&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "/css/styles2.css"/>
+
+    <title>Gallery</title>
+</head>
+<body>
+    <nav>
+    <div class="logo">Gallery.</div>
+   
+    <ul class="nav-links">
+        <li>
+            <a href = "/dashboard">Home</a>
+        </li>
+        <li>
+            <a href = "/create">create</a>
+        </li>
+        <li>
+            <a href = "/profile">Profile</a>
+        </li>
+        <li>
+            <form action="/logout" method="post">
+                
+                <button type="submit">Logout</button>
+            </form>
+        </li>
+    </ul>
+
+    
+    </nav>
+    
+    <div class="profinf">
+        <h1><%= user.name%></h1>
+        
+            <h2 id = 'followers'><%= user.followers.user.length%> followers</h2>
+            <h2><%= user.following.user.length%> following</h2>
+        
+            <div class= "follower_actions">
+                <input type = "hidden" value = "<%= user._id%>" id = "userId">
+                
+                <% if(isFollow === -1) { %>
+                <button class="btn" onclick = "putUnfollow(this)">Follow</button>
+                <% } %>
+                <% if(isFollow !== -1) {%>
+                    <button class="btn" onclick = "putUnfollow(this)">Unfollow</button>
+                <% } %>
+               
+            </div>
+       
+    </div>
+   
+    <div class="imgdisp">
+             <% for (let post of posts) { %>
+                <div class="img-container">
+                    <a href="/user/post/<%= post.photoId._id %>">
+                    <img src="<%= post.photoId.imageUrl%>" alt = "<%= post.photoId.description%>" data-original="<%= post.photoId.imageUrl%>"/>
+                </a>
+                </div>
+            <% } %>
+
+         </div>
+        
+    
+
+
+
+<script src="/js/app2.js"></script>
+<script src="/js/putUnfollow.js"></script>
+</body>
+</html>

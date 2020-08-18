@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery.</title>
+    <link rel = "stylesheet" href = "/css/styledashboard.css"/>
+    <link rel = "stylesheet" href = "/css/styles2.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">Gallery.</div>
+       
+            <ul class="nav-links">
+                <li>
+                    <a href = "/dashboard">Home</a>
+                </li>
+                <li>
+                    <a href = "/create">create</a>
+                </li>
+                <li>
+                    <a href = "/profile">Profile</a>
+                </li>
+                <li>
+                    <form action="/logout" method="post">
+                        
+                        <button type="submit">Logout</button>
+                    </form>
+                </li>
+            </ul>
+       
+        
+        </nav>
+        <div class="post">
+            <% for(let post of posts){ %>
+                <div class="post-control">
+                    <div class="post-head">
+                        <img src = "/images/icons8-user-male.svg" class="post-user"/>
+                        <h1><%= post.user.userid%></h1>
+                    </div>
+                    <div>
+                        <img src = "<%= post.imageUrl %>" class="post-photo"/>
+                    </div>
+                    <div class="post-content">
+                        <img src = "/images/heart.svg" class="post-like" onclick = "postLike(this)"/>
+                        <h3><%= post.likes.length %> Likes</h3>
+                        <hr>
+                        <p><%= post.description %></p>
+                    </div>
+                </div>
+            <% } %>
+
+        </div>
+<script src = "/js/likePost.js"></script>
+</body>
+</html>
